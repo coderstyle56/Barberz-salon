@@ -52,14 +52,17 @@
 
 // export default Navbar;
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsOpen(false); // Close menu after clicking a link
     }
   };
 
@@ -70,7 +73,8 @@ function Navbar() {
           <h1 className="text-2xl font-bold text-gray-500">BARBERZ</h1>
         </div>
 
-        <ul className="flex flex-1 justify-end gap-10 hidden md:flex">
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex flex-1 justify-end gap-10">
           <li className="hover:text-gray-400 cursor-pointer">
             <Link href="#home">Home</Link>
           </li>
@@ -90,8 +94,13 @@ function Navbar() {
           </li>
         </ul>
 
+        {/* Hamburger Button */}
         <div className="md:hidden">
-          <button className="text-gray-400 hover:text-white" aria-label="Open Menu">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-gray-400 hover:text-white"
+            aria-label="Open Menu"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -104,6 +113,24 @@ function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <ul className="md:hidden flex flex-col gap-4 p-4 bg-black text-white text-center">
+          <li onClick={() => setIsOpen(false)} className="hover:text-gray-400 cursor-pointer">
+            <Link href="#home">Home</Link>
+          </li>
+          <li onClick={() => setIsOpen(false)} className="hover:text-gray-400 cursor-pointer">
+            <Link href="#about">About Us</Link>
+          </li>
+          <li onClick={() => scrollToSection("services")} className="hover:text-gray-400 cursor-pointer">
+            Services
+          </li>
+          <li onClick={() => setIsOpen(false)} className="hover:text-gray-400 cursor-pointer">
+            <Link href="#contact">Contact Us</Link>
+          </li>
+        </ul>
+      )}
     </div>
   );
 }
