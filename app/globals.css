@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+  }
+  
+  section {
+    scroll-margin-top: 80px; /* Adjust to navbar height */
+  }
+  

@@ -3,7 +3,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagra
 
 export default function Footer() {
   return (
-    <footer className="bg-stone-800 text-white py-10 px-4 mt-0">
+    <footer className="bg-stone-800 text-white py-10 px-4 mt-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         
         {/* Logo and Description */}
