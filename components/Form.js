@@ -1,6 +1,5 @@
 "use client";
 import React, { forwardRef } from "react";
-import Image from "next/image";
 
 const Form = forwardRef((props, ref) => (
   <div ref={ref} className="flex flex-col lg:flex-row bg-gray-900 text-white">
@@ -91,4 +90,7 @@ const Form = forwardRef((props, ref) => (
   </div>
 ));
 
+Form.displayName = "Form"; // Adding display name
+
 export default Form;
+
