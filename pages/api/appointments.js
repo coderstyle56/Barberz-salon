@@ -2,6 +2,11 @@ import nodemailer from "nodemailer";
 import dbConnect from "@/utils/dbConnect";
 import Appointment from "@/model/Appointment";
 
+console.log("MONGO_URI:", process.env.MONGO_URI ? "Found" : "Not Found");
+console.log("EMAIL_USER:", process.env.EMAIL_USER ? "Found" : "Not Found");
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "Found" : "Not Found");
+
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed" });
