@@ -1,0 +1,27 @@
+/* .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  } */
+  
+  .imageContainer {
+    position: relative;
+    margin-left: 30px; /* Corrected margin syntax */
+    margin-bottom: 10px;
+    width: 100%; /* Full width of the parent */
+    max-width: 400px; /* Limit the max width */
+    height: auto; /* Ensures container adjusts height based on content */
+    aspect-ratio: 2; /* Maintains a 2:1 width-to-height ratio */
+  }
+  
+  .image {
+    width: 100%; /* Ensures image fills the container */
+    height: 100%; /* Ensures the image respects the container height */
+    object-fit: contain; /* Scales image without cropping */
+    border-radius: 12px; /* Optional: Add rounded corners */
+  }
+  
+  
+
+  
+  
