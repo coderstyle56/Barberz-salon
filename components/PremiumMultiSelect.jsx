@@ -3,7 +3,6 @@ import { Listbox, Transition } from "@headlessui/react";
 import { FaTimes, FaChevronDown } from "react-icons/fa";
 
 function PremiumMultiSelect({ services, selected, setSelected }) {
-
   const toggleService = (id) => {
     if (selected.includes(id)) {
       setSelected(selected.filter((s) => s !== id));
@@ -52,7 +51,7 @@ function PremiumMultiSelect({ services, selected, setSelected }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Listbox.Options className="absolute mt-2 w-60 bg-[#1a1f27] text-white rounded-xl shadow-xl p-2 z-20">
+              <Listbox.Options className="absolute mt-2 w-60 bg-[#1a1f27] text-white rounded-xl shadow-xl p-2 z-20 right-0">
                 {services.map((service) => (
                   <Listbox.Option
                     key={service.id}

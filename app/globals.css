@@ -23,20 +23,26 @@ section {
 }
 
 @keyframes scrollInfinite {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-scrollInfinite {
-  animation: scrollInfinite 25s linear infinite;
+  animation: scrollInfinite 20s linear infinite;
+  width: max-content;
+  display: flex;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Faster on mobile */
+@media (max-width: 768px) {
+  .animate-scrollInfinite {
+    animation-duration: 15s;
+  }
+}
+
+/* Pause on hover */
+.hover\:pause-animation:hover {
+  animation-play-state: paused;
 }
 
 

@@ -56,20 +56,22 @@ export default function TestimonialSection() {
       </div>
 
       {/* Infinite Scroller */}
-      <div className="relative w-full">
-        <div className="flex gap-10 animate-scrollInfinite">
+      <div className="relative w-full overflow-hidden">
+        <div className="flex gap-10 animate-scrollInfinite hover:pause-animation">
           {loopTestimonials.map((t, index) => (
             <div
               key={index}
               className="
-                min-w-[360px] max-w-[360px] 
-                backdrop-blur-xl bg-white/40 
-                border border-white/60 
-                shadow-[0_8px_25px_rgba(0,0,0,0.10)] 
-                rounded-3xl p-6 
-                inline-flex flex-col justify-between 
-                h-[300px]
-              "
+          min-w-[300px] max-w-[300px] 
+          sm:min-w-[360px] sm:max-w-[360px]
+          backdrop-blur-xl bg-white/40 
+          border border-white/60 
+          shadow-[0_8px_25px_rgba(0,0,0,0.10)] 
+          rounded-3xl p-6 
+          inline-flex flex-col justify-between 
+          h-[280px] sm:h-[300px]
+          flex-shrink-0
+        "
             >
               {/* Stars */}
               <div className="flex gap-1 mb-3">
@@ -81,12 +83,14 @@ export default function TestimonialSection() {
               </div>
 
               {/* Review */}
-              <p className="
+              <p
+                className="
                 text-gray-800 italic leading-relaxed text-[15px]
                 break-words 
                 mb-6 
                 line-clamp-5
-              ">
+              "
+              >
                 “{t.review}”
               </p>
 
@@ -104,4 +108,3 @@ export default function TestimonialSection() {
     </section>
   );
 }
-
